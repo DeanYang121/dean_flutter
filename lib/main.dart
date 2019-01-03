@@ -7,16 +7,23 @@ import './demo/basic_demo.dart';
 import './demo/layout_demo.dart';
 import './demo/view_demo.dart';
 import './demo/sliver_demo.dart';
+import './demo/navigator_demo.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      // home: NavigatorDemo(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Home(),
+        '/about': (context) => Page(
+              title: 'about',
+            )
+      },
       theme: ThemeData(
           primarySwatch: Colors.red,
           highlightColor: Color.fromRGBO(255, 255, 255, 0.5),
@@ -26,8 +33,6 @@ class MyApp extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -53,7 +58,7 @@ class Home extends StatelessWidget {
                 Tab(icon: Icon(Icons.local_florist)),
                 Tab(icon: Icon(Icons.change_history)),
                 Tab(icon: Icon(Icons.directions_bike)),
-                Tab(icon:Icon(Icons.view_quilt)),
+                Tab(icon: Icon(Icons.view_quilt)),
               ],
             ),
           ),
