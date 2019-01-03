@@ -14,7 +14,7 @@ class LayoutDemo extends StatelessWidget {
               maxWidth: 100.0
             ),
             child: Container(
-              color: Color.fromRGBO(44, 54, 255, 1.0),
+              color: Color.fromRGBO(3, 54, 255, 1.0),
             ),
           )
         ],
